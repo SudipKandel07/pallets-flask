@@ -61,3 +61,23 @@ Ejemplo: Colocamos las tareas del primer sprint en Sprint Backlog.
 UPSTREAM
 Definición: Nombre habitual del remoto que apunta al repositorio original del que procede nuestro fork.
 Ejemplo: Configuramos upstream para conectarnos con pallets/flask.
+
+Assignee
+Definición: Persona asignada a una tarea para encargarse de realizarla.
+Ejemplo: Asignamos un responsable a cada issue del proyecto.
+
+Board
+Definición: Vista que muestra las tareas organizadas en columnas según su estado.
+Ejemplo: Utilizamos el Board para ver las tareas pendientes y terminadas.
+
+Iteration
+Definición: Periodo de tiempo definido para organizar y planificar el trabajo de un proyecto.
+Ejemplo: Asignamos las tareas a la Iteration 1 o a la Iteration 2.
+
+Status
+Definición: Campo que indica en qué fase del trabajo se encuentra una tarea.
+Ejemplo: Cambiamos el Status de una tarea de Backlog a In Progress.
+
+View
+Definición: Forma de visualizar y organizar la información de un proyecto.
+Ejemplo: Creamos una vista Board y otra Table en GitHub Projects.
