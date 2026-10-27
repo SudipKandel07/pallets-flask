@@ -1,6 +1,5 @@
 # Diagrama de classes UML
 
-Aquest fitxer documenta les classes User i Post i la relació entre elles.
 
 ```mermaid
 classDiagram
@@ -8,6 +7,9 @@ classDiagram
         +INTEGER id
         +TEXT username
         +TEXT password
+        +register()
+        +login()
+        +logout()
     }
 
     class Post {
@@ -16,6 +18,9 @@ classDiagram
         +TIMESTAMP created
         +TEXT title
         +TEXT body
+        +create()
+        +edit()
+        +delete()
     }
 
     User "1" --> "0..*" Post : crea
