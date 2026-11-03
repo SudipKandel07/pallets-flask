@@ -1,35 +1,23 @@
 # Diagrames de seqüència UML – Projecte BLOG Flask
 
-En aquest apartat es mostren els diagrames de seqüència del procés d'autenticació de l'aplicació Flaskr.
+En aquest apartat es descriuen els diferents diagrames de seqüència relacionats amb el procés d'inici de sessió de l'aplicació Flaskr.
 
 ## 1. Happy Path – Inici de sessió correcte
 
-Aquest diagrama mostra el procés d'inici de sessió quan l'usuari introdueix correctament el seu nom d'usuari i la seva contrasenya. El sistema valida les credencials i permet accedir a la pàgina principal.
-
-![Happy Path](diagrams/happy-path.png)
-
-[Veure diagrama Happy Path](diagrams/happy-path.png)
+Mostra el funcionament normal de l'inici de sessió quan l'usuari introdueix correctament el seu nom d'usuari i la contrasenya.
 
 ## 2. Contrasenya incorrecta
 
-Aquest diagrama representa el cas en què l'usuari introdueix una contrasenya incorrecta. El sistema rebutja les credencials i mostra el missatge d'error «Incorrect password».
-
-![Contrasenya incorrecta](diagrams/password-incorrecta.png)
-
-[Veure diagrama de contrasenya incorrecta](diagrams/password-incorrecta.png)
+Representa el cas en què l'usuari introdueix una contrasenya incorrecta i el sistema rebutja l'accés mostrant un missatge d'error.
 
 ## 3. Sistema no disponible
 
-Aquest diagrama mostra què passa quan el servidor Flaskr està aturat i l'usuari intenta accedir a l'aplicació. El navegador no pot establir la connexió i mostra l'error `ERR_CONNECTION_REFUSED`.
-
-![Sistema no disponible](diagrams/sistema-no-disponible.png)
-
-[Veure diagrama de sistema no disponible](diagrams/sistema-no-disponible.png)
+Mostra què passa quan el servidor no està disponible i l'usuari no pot accedir a l'aplicació.
 
 ## 4. Username incorrecte
 
-Aquest diagrama representa el cas en què l'usuari introdueix un nom d'usuari que no existeix. El sistema no troba l'usuari a la base de dades i rebutja l'inici de sessió.
+Representa el cas en què l'usuari introdueix un nom d'usuari que no existeix i el sistema no permet iniciar la sessió.
 
-![Username incorrecte](diagrams/username-incorrecto.png)
+## 5. Correu electrònic incorrecte
 
-[Veure diagrama de username incorrecte](diagrams/username-incorrecto.png)
+També s'ha elaborat aquest diagrama com a escenari alternatiu. Tot i això, no s'ha pogut provar a Flaskr perquè el formulari d'inici de sessió només demana el nom d'usuari (Username) i la contrasenya (Password), i no demana cap correu electrònic.
