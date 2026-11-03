@@ -18,6 +18,3 @@ Mostra què passa quan el servidor no està disponible i l'usuari no pot accedir
 
 Representa el cas en què l'usuari introdueix un nom d'usuari que no existeix i el sistema no permet iniciar la sessió.
 
-## 5. Correu electrònic incorrecte
-
-També s'ha elaborat aquest diagrama com a escenari alternatiu. Tot i això, no s'ha pogut provar a Flaskr perquè el formulari d'inici de sessió només demana el nom d'usuari (Username) i la contrasenya (Password), i no demana cap correu electrònic.
