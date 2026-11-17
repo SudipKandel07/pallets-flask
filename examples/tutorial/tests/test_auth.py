@@ -10,7 +10,7 @@ def test_register(client, app):
     assert client.get("/auth/register").status_code == 200
 
     # test that successful registration redirects to the login page
-    response = client.post("/auth/register", data={"username": "a", "password": "a"})
+    response = client.post("/auth/register", data={"username": "a", "password": "a1234567"})
     assert response.headers["Location"] == "/auth/login"
 
     # test that the user was inserted into the database
@@ -26,7 +26,7 @@ def test_register(client, app):
     (
         ("", "", b"Username is required."),
         ("a", "", b"Password is required."),
-        ("test", "test", b"already registered"),
+        ("test", "test1234", b"already registered"),
     ),
 )
 def test_register_validate_input(client, username, password, message):
@@ -67,3 +67,31 @@ def test_logout(client, auth):
     with client:
         auth.logout()
         assert "user_id" not in session
+
+def test_register_password_too_short(client):
+# Comprova que no es pot registrar un usuari amb una contrasenya de menys de 8 caràcters.
+    response = client.post(
+        "/auth/register",
+        data={"username": "usuario7", "password": "abc1234"}
+    )
+
+    assert b"Password must be at least 8 characters long." in response.data
+
+def test_register_password_8_chars(client):
+# Comprova que es pot registrar un usuari amb una contrasenya de 8 caràcters.
+    response = client.post(
+        "/auth/register",
+        data={"username": "usuario8", "password": "abc12345"}
+    )
+
+    assert response.headers["Location"] == "/auth/login"
+
+
+def test_register_password_9_chars(client):
+# Comprova que es pot registrar un usuari amb una contrasenya de 9 caràcters.
+    response = client.post(
+        "/auth/register",
+        data={"username": "usuario9", "password": "abc123456"}
+    )
+
+    assert response.headers["Location"] == "/auth/login"
